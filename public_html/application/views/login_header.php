@@ -3,6 +3,9 @@
 <html style="height:100px;">
 	<head>
         <meta charset="utf-8">
+        <meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
         <title>Login</title>
         
         <? include('font_file.php');
@@ -10,7 +13,7 @@
         ?>
 
 		<script src="../../ajaxloader/ajaxloader.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/doc.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
 		<link rel="stylesheet" type="text/css" href="Flat-UI-master/css/flat-ui.css">
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
 
@@ -401,7 +404,20 @@ function AjaxLoader(id, options) {
 </div>  
 <!-- NAVBAR END -->
 
+<!--Migrate to external CSS --> 
+<style type="text/css">
 
+  
+
+
+
+
+
+
+
+
+
+</style>
 
 
 
