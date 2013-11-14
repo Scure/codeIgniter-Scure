@@ -16,7 +16,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">	
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css">
-		<link rel="stylesheet" type="text/css" href="css/landingpage.css">
+		<!--<link rel="stylesheet" type="text/css" href="css/landingpage.css">-->
 		<?/**3
 		<!--<link rel="stylesheet" type="text/css" href="Flat-UI-master/js/application.js">-->
 		<!--<link rel="stylesheet" type="text/css" href="Flat-UI-master/css/flat-ui.css">-->*/?>
@@ -156,7 +156,341 @@
   })();  
 </script>  
 	
+<style type="text/css">
 
+	/** RESET CSS in application/ **/
+
+		
+
+
+
+
+		#header{
+
+			background:url(../images/headeer1-bg.jpg) 50% 0 repeat fixed; min-height: 150px;
+			
+			height: 150px;
+			margin: auto;
+			width: 100%;
+			position:relative;
+			padding:0px;
+			border-bottom:2px solid #F0F0F0;
+			margin:0; padding:0;
+		
+		}
+
+
+		#header article{
+			background:url(../images/login_bg.jpg) 50% 0 repeat fixed; min-height: 525px;
+
+			height: 458px;
+			position:absolute;
+			text-align:left;
+			margin:auto;
+			top:75px;
+			width:100%;
+			color:black;
+			font-size:60px;
+			font-family: 'Roboto Slab', serif;
+			font-family: 'Berkshire Swash', cursive;
+			font-family: 'Rancho', cursive;
+		}
+		
+		#dinner{
+		
+/*			background:url(../images/dinner2-bg.jpg) 50% 0 repeat fixed; min-height: 525px;*/
+			background-color:white;
+		
+			height: 724px;
+			margin: 0 auto;
+			width: 100%;
+			max-width:1920px;
+			position:relative;
+			-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+			box-shadow: 0 0 50px rgba(0,0,0,0.8);
+
+		}
+
+
+		#dinner article{
+
+			height:800px;
+			position:absolute;
+			text-align:center;
+			top:150px;
+			width:100%;
+			color:white;
+			font-size:42px;
+			font-family: 'Shadows Into Light Two', cursive;
+
+
+		}
+
+		#club{
+		
+			background:url(../images/whitebg.jpg) 50% 0 repeat fixed; min-height: 525px;
+			height: 1225px;
+			margin: 0 auto;
+			width: 100%;
+			max-width:1920px;
+			position:relative;
+			-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+			box-shadow: 0 0 50px rgba(0,0,0,0.8);
+
+		}
+
+
+		#club article{
+
+			height:1000px;
+			position:absolute;
+			text-align:center;
+			top:150px;
+			width:100%;
+						color:white;
+			font-size:42px;
+			font-family: 'Shadows Into Light Two', cursive;
+
+
+		}
+		
+		#after{
+		
+			background:url(../images/after-bg.jpg) 50% 0 repeat fixed; min-height: 525px;
+			height: 525px;
+			margin: 0 auto;
+			width: 100%;
+			max-width:1920px;
+			position:relative;
+			-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+			box-shadow: 0 0 50px rgba(0,0,0,0.8);
+
+		}
+
+
+		#after article{
+
+			height:458px;
+			position:absolute;
+			text-align:center;
+			top:150px;
+			width:100%;
+			color:white;
+			font-size:42px;
+			font-family: 'Shadows Into Light Two', cursive;
+
+
+		}
+		#wrapper{
+			
+			
+			color:black;
+			height:600px;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 1920px;
+			position:relative;
+		}
+		
+		#home{
+
+			background:url(../images/home-bg.jpg) 50% 0 repeat fixed; min-height: 450px;
+			height: 450px;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 1920px;
+			position:relative;
+		}
+
+		#home article{
+
+			height: 458px;
+			position:absolute;
+			text-align:center;
+			top:150px;
+			width:100%;
+			color:white;
+			font-size:42px;
+			font-family: 'Shadows Into Light Two', cursive;
+
+
+		}
+
+		#about{
+		
+			background:url(../images/goout2.jpg) 50% 0 repeat fixed; min-height: 525px;
+			background:url(../images/ny_bg_1.jpg) 50% 0 repeat fixed; min-height: 450px;
+
+			background-color:white;
+			height: 750px;
+			
+			margin: 0 auto;
+			width: 100%;
+			max-width:1920px;
+			position:relative;
+			-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+			box-shadow: 0 0 50px rgba(0,0,0,0.8);
+
+		}
+
+
+		#about article{
+
+			height:458px;
+			position:absolute;
+			text-align:center;
+			top:150px;
+			width:100%;
+			color:white;
+			font-size:42px;
+			font-family: 'Shadows Into Light Two', cursive;
+
+
+		}
+		
+				
+		#about2Info{
+		
+			background:url(../images/cafe_4.jpg) 50% 0 repeat fixed; min-height: 450px;
+
+			background-color:white;
+			height: 750px;
+			color: white;
+			margin: 0 auto;
+			width: 100%;
+			max-width:1920px;
+			position:relative;
+			-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+			box-shadow: 0 0 50px rgba(0,0,0,0.8);
+
+		}
+
+
+		#about2Info article{
+
+			height:458px;
+			position:absolute;
+			text-align:center;
+			
+			top:150px;
+			width:100%;
+			color:white;
+			font-size:42px;
+			font-family: 'Shadows Into Light Two', cursive;
+
+
+		}
+		
+		
+		
+		#menuBar{
+			
+			
+			font-size:14px;
+			margin-left:10%;
+			text-align:center;
+			display: inline;
+			font-family: 'Arimo', sans-serif;
+		}
+		
+		#slideshow{
+			
+				margin-left:55%;
+				margin-top:25px;
+			
+		}
+		
+		#loginDiv{
+			
+			border:1px solid gray; 
+			width:400px; 
+			height:200px; 
+			margin-left:auto; 
+			margin-right:auto;
+			-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);
+			box-shadow: 0 0 50px rgba(0,0,0,0.8);
+		    -moz-border-radius: 10px;
+		    -webkit-border-radius: 10px;
+		    border-radius: 10px;
+		    margin-top:65px;
+		    padding:70px;
+		    background-color:white;
+	
+		}
+
+		.homeContent {
+		    height: 100%;
+		    width: 100%;
+		    position: relative;
+		    margin: 0 auto;
+		}
+
+		#mainBG {
+		   background: url(../img/bgbig.jpg) no-repeat scroll;
+			background-position:center;
+			background-size: cover;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+		}
+
+
+@media only screen and (max-width: 1024px) and (orientation:landscape) {
+   #mainBG { background: url(images/medium.jpg) 50% 0 no-repeat scroll !important;
+	background-position:center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	#mainBG { background: url(images/medium.jpg) 50% 80% no-repeat scroll !important;
+	background-position:center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+	#mainBG { background: url(images/small.jpg) 75% 80% no-repeat scroll !important;
+	background-position:center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+}
+		
+*::-webkit-input-placeholder {
+    color: red;
+}
+
+*:-moz-placeholder {
+    color: red;
+}
+
+*:-ms-input-placeholder {
+    /* IE10+ */
+    color: red;
+}
+body{
+    /*background:url('../img/sfbridge.jpg') no-repeat center center;
+
+	margin:0; padding:0;
+    background-color:white;
+    background-attachment:fixed;
+    overflow:scroll;
+    height:100%;
+    background-size:cover;*/
+}
+
+	
+
+
+
+</style>
 
 
 </head>

@@ -26,6 +26,25 @@
 		  <button class="btn btn-danger" style="display:none;"type="submit" id="reserve_submit">Reserve</button>
 		  <?php echo form_close(); ?>
 </div>
+
+
+<section data-type="background" style="margin-top:100px; background-image:url('../../img/bg5.jpg'); width:100%; background-attachment:fixed;background-size:cover;">
+	
+
+	<section style="background-color:rgba(0,0,0,0.7); height:600px; width:100%; padding-top:30px;">
+		<div id="section1_container" style="margin-left:10%;">
+		  <h1 style="color:white; font-family: 'Source Sans Pro', sans-serif; font-size:65px; font-weight:200;"  >Integrates Seamlessly</h1>
+		 </div>
+	
+
+
+	</section>
+
+</section>
+
+
+
+
 <?/**d
 
 <!--
