@@ -63,42 +63,26 @@
 	<section style="background-color:white; height:600px; width:100%; padding-top:50px;">
 		
 
-		  <div  style="margin-left:10%;">
-		  		<h1 style="color:black; font-family: 'Source Sans Pro', sans-serif; font-size:65px; font-weight:200;">Live Alerts and Updates</h1>
+		  <div  style="margin-left:10%; font-family:'Source Sans Pro',sans-serif;">
+		  		<h1 style="color:black; font-family: 'Source Sans Pro', sans-serif; font-size:65px; font-weight:200;">Keep tabs at home</h1>
 	
-				 <p style="margin-top:75px;">
-				  Stay up to date with alerts to your smartphone and computer. 
-				  <br>
+				 <p style="margin-top:75px; color:gray; line-height:34px;font-size:18px; width:600px;">
+				  Retrieve live data of conditions at home from anywhere in the world. Receive notifications anytime something out-of-the-ordinary occurs.			  
 				  Investigate by taking a snapshot or pinging one of your friends in the area. 
 
 				</p>
 		 </div>
-	  
-
-
-
-
-
-	
-
-
 	</section>
-
 </section>
 
 <section data-type="background" style="background-image:url('../../img/bg9.jpg'); width:100%; background-attachment:fixed;background-size:cover;">
-	
-
 	<section style="background-color:rgba(0,0,0,0.7); height:600px; width:100%; padding-top:50px; font-family: 'Source Sans Pro', sans-serif;">
-		<div id="section1_container" style="margin-left:10%;">
-		  <h1 style="color:white; font-family: 'Source Sans Pro', sans-serif; font-size:65px; font-weight:200;">Always Connected</h1>
-		 
-		  <p>
-		  Stay 
-
-		  </p>
-
-
+		<div id="section1_container" style="margin-right:10%; float:right;">
+		  <h1 style="color:white; font-family: 'Source Sans Pro', sans-serif; font-size:65px; font-weight:200;">A Smarter System</h1>
+		 		<p style="margin-top:75px; color:white; line-height:34px;font-size:18px; width:600px;">
+		 			Scure will learn and adapt to your activity patterns and automatically arm/disarm itself based on your location.
+		 			Set rules and visit schedules for different users. 
+				</p>
 		 </div>
 	
 
