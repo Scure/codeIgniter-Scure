@@ -14,6 +14,10 @@
 
 		public function verify_user($email,$password){
 
+
+
+
+
 			$q = $this -> db -> where('email',$email)->where('password',sha1($password)) -> limit(1) -> get('users');
 			//$this->output->enable_profiler(TRUE);
 			

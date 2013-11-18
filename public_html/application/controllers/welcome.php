@@ -115,13 +115,16 @@ class Welcome extends CI_Controller {
 	}
 
 
+
+
+
 	public function changeAlarmStatus(){
 		//Make diagram documentation
-
 
 		$email = $_SESSION['username'];
 		$this->load->model('welcome_model');
 		$result = $this -> welcome_model -> getSystemStatus($email); 
+
 
 		if($result -> system_status == 0){
 			
@@ -139,9 +142,9 @@ class Welcome extends CI_Controller {
 		}
 
 		redirect('welcome');
-
-
 	}
+
+
 
 	public function liveUpdateActivity(){
 		$email = $_SESSION['username'];

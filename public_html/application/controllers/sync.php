@@ -28,7 +28,7 @@ class Sync extends CI_Controller {
 	public function index()
 	{		
 		if(!isset($_SESSION['username'])){
-			redirect('admin');
+			redirect('login');
 		}
 		$this->load->library('form_validation');   //Load form validation library
 		$this->form_validation->set_rules('deviceid1', 'ID1', 'required|min_length[5]');
