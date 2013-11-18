@@ -93,6 +93,43 @@
 		}
 
 
+		/*
+		*	(API)
+		*
+		*	POST function for user model. 
+		*   
+		*   Requires: Email(ID),Password(PW),First_name, Last_name
+		* 
+		*	Returns user if there is an ID.  Sends all the information and updates the entire row.
+		*/ 
+
+		public function post($data){
+
+				$exists = $this->check_for_existing($data['email']);
+
+				if($exists){
+
+						return false;
+				}
+
+
+				$this -> db -> where('email',$data['email']);
+				$this -> db -> update('users',$data);
+
+		}
+
+
+
+
+		/*
+		*   CHECK FOR EXISTING	
+		*  
+		*	Takes in the Email(ID) and returns true if the user exists
+		*   
+		*   Requires: Email(ID)
+		* 
+		*	Returns user if ID exists
+		*/ 
 
 		public function check_for_existing($email){
 

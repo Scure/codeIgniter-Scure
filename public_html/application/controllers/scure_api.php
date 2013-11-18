@@ -32,13 +32,22 @@
 
 			function user_post(){
 
-				if(!$this->get('id')){
+				if(!$this->get('id') || !$this->get('pw') || !$this->get('firstname') || !$this->get('lastname')){
 
 					$this->response(NULL,400);
 
 				}
 
-				$result = $this->user_model->delete($this->get('id'));
+				$data = array(
+
+						'email'=>$this->get('id'),
+						'pw'   =>$this->get('pw'),
+						'firstname'=>$this->get('firstname'),
+						'lastname'=>$this->get('lastname')
+
+					);
+
+				$result = $this->user_model->post($data);
 
 				if($result){
 
