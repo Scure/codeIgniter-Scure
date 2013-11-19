@@ -103,23 +103,35 @@
 		*	Returns user if there is an ID.  Sends all the information and updates the entire row.
 		*/ 
 
-		public function post($data){
+		public function post($username,$data){
 
-				$exists = $this->check_for_existing($data['email']);
+				$exists = $this->check_for_existing($username);
 
-				if($exists){
+				if($exists == false){
 
 						return false;
 				}
 
 
-				$this -> db -> where('email',$data['email']);
+
+				$this -> db -> where('email',$username);
 				$this -> db -> update('users',$data);
+				return true;
 
 		}
 
 
+		public function update($email,$data){
 
+
+
+			return TRUE;
+
+
+
+
+
+		}
 
 		/*
 		*   CHECK FOR EXISTING	

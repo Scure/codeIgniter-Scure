@@ -408,7 +408,6 @@ abstract class REST_Controller extends CI_Controller
 			{
 				// Set the correct format header
 				header('Content-Type: '.$this->_supported_formats[$this->response->format]);
-
 				$output = $this->format->factory($data)->{'to_'.$this->response->format}();
 			}
 
