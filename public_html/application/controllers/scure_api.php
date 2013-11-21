@@ -53,10 +53,6 @@ require(APPPATH.'libraries/REST_Controller.php');
 				//Send post request in body 
 				//email_username,email_domain,pw,firstname,lastname
 
-
-
-
-
 				$this->load->model('user_model');
 
 				$email_username = $this->input->post('email_username');
@@ -106,36 +102,13 @@ require(APPPATH.'libraries/REST_Controller.php');
 
 				}
 
-
-
-
-			/**	$username = $this->get('id')."@".$this->get('email');
-
-				$data = array(
-
-						'pw'   =>$this->post('pw'),
-						'firstname'=>$this->post('firstname'),
-						'lastname'=>$this->post('lastname')
-
-					);
-
-				$result = $this->user_model->post($username,$data);
-
-				if(!$result){
-
-					$this->response(array('Status'=>'Not Found'),400);
-				}
-				else{
-
-					$this->response('OK',200);
-
-				}**/
-
-
 			}
 
 
 			function user_put(){
+				
+
+
 				$this->load->model('user_model');
 
 				if(!$this->get('id') || !$this->get('pw') || !$this->get('firstname') || !$this->get('lastname')){
