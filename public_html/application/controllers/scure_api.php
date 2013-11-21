@@ -18,9 +18,6 @@ require(APPPATH.'libraries/REST_Controller.php');
 
 			}
 
-
-
-
 			/** user is the resource and get is the action **/
 			function user_get(){
 
@@ -33,7 +30,6 @@ require(APPPATH.'libraries/REST_Controller.php');
 
 				}
 				$username = $this->get('id')."@".$this->get('email');
-
 				$user = $this->user_model->get($username,$this->get('pw'));
 
 				if($user){
@@ -59,7 +55,8 @@ require(APPPATH.'libraries/REST_Controller.php');
 
 				$this->load->model('user_model');
 
-				$email          = html_entity_decode($this->input->post('email'));
+				$email_username = $this->input->post('email_username');
+				$email_domain   = $this->input->post('email_domain');
 				$pw = $this->input->post('pw');
 				$firstname = $this->input->post('firstname');
 				$lastname = $this->input->post('lastname');
@@ -68,7 +65,7 @@ require(APPPATH.'libraries/REST_Controller.php');
 				$error_not_found   = json_encode(array('status'=>'User not found'));
 				$success_add       = json_encode(array('status'=>'User Added'));
 
-				if(!$email || !$pw  || !$firstname || !$lastname){
+				if(!$email_username || !$email_domain || !$pw  || !$firstname || !$lastname){
 					
 
 					$this->response($error_param,400);
@@ -76,11 +73,12 @@ require(APPPATH.'libraries/REST_Controller.php');
 				}
 				else{
 
+					$email = $email_username."@".$email_domain;
 
 					$data = array(
 
 							'email'=>$email,
-							'password'=>sha1($pw),
+							'password'=>$pw,
 							'first_name'=>$firstname,
 							'last_name'=>$lastname
 
@@ -146,32 +144,6 @@ require(APPPATH.'libraries/REST_Controller.php');
 
 
 			}
-
-
-
-			function device_get(){
-
-					//Retrieve device information and current parameters with html_encoded email string 
-					//@TODO: Put data parameters such as temperature/sound level under the /data resource 
-
-				$email = html_entity_decode($this->input->get('email'));
-				$this->response(array('Email'=>$email),400);
-
-
-
-
-			}
-
-
-
-
-
-
-
-
-
-
-
 
 	}
 
