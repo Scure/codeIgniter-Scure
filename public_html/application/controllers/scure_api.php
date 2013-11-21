@@ -2,6 +2,7 @@
 
 
 require(APPPATH.'libraries/REST_Controller.php');
+require_once(APPPATH.'libraries/response_codes.php');
 
 	class scure_api extends REST_Controller{
 
@@ -29,7 +30,7 @@ require(APPPATH.'libraries/REST_Controller.php');
 				
 				if(!$this->get('email') || !$this->get('pw')){
 
-					$this->response('Invalid Parameters',400);
+					$this->response('Invalid Parameters',401);
 
 				}
 				$username = html_entity_decode($this->get('email'));
@@ -40,7 +41,7 @@ require(APPPATH.'libraries/REST_Controller.php');
 					$this->response($user,200);		//Return the user and success code
 				}
 				else{
-					$this->response('Not Found',400);		//Return nothing and error code
+					$this->response('Not Found',401);		//Return nothing and error code not authorized
 				}
 
 
@@ -151,13 +152,55 @@ require(APPPATH.'libraries/REST_Controller.php');
 
 			function device_get(){
 
+
+					//!!!!!! Changing Table setup
 					//Retrieve device information and current parameters with html_encoded email string 
 					//@TODO: Put data parameters such as temperature/sound level under the /data resource 
-
+					//@TODO: Need to figure out the structure of having multiple devices per user since that's whats going on now. 
+					// For now, set this up assuming settings apply to all devices.  
+					// Client should pass in (all) or the ID of the device they wish to edit.  
+					// Should just change the structure of the device_list to have one row for each device and an owner column
+					// Separate table with the device_id as the id that gets checked once the user credentials are verified
+				
+				$this -> load -> model('device_model');
 				$email = html_entity_decode($this->input->get('email'));
-				$this->response(array('Email'=>$email),400);
+				$error_param = json_encode(array('status'=>'Invalid Parameters'));
+				$id_not_found   = json_encode(array('status'=>'User not found'));
 
 
+				if(!$email){
+
+					$this->response($error_param,400);
+
+				}
+
+				$result = $this->device_model->get($email);
+
+
+				if($result == false){
+
+
+					$this -> response($id_not_found,400);
+
+
+				}else{
+
+					$settings = json_encode(array(
+
+						'audio_sensor' => $result->audio_sensor,
+						'temp_sensor'  => $result->temp_sensor,
+						'motion_sensor'=> $result->motion_sensor,
+						'system_status'=> $result->system_status
+
+						));
+
+
+					$this->response($settings,200);
+
+
+
+
+				}
 
 
 			}

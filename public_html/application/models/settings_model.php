@@ -11,7 +11,7 @@
 
 
 			function newSettings($data,$email){
-
+						//updates settings with new ones
 						$this -> db -> where('email',$email);
 						$this -> db -> update('user_settings',$data);
 						

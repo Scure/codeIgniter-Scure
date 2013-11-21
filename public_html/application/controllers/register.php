@@ -33,7 +33,7 @@ class Register extends CI_Controller {
 
 
 						$result = $this  -> user_model  -> put($data);
-
+							
 
 						if($result == false){
 								
