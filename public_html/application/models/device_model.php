@@ -44,21 +44,33 @@
 
 			}
 
+		   /*
+			*	(API)
+			*
+			*	PUT function for user model. 
+			*   
+			*   Requires: Email(ID), Device ID, Device Name
+			* 
+			*	Adds the device id and name to the user's device list.   
+			*/ 
+
+			function put($email,$device_id_list,$device_name_list){
+
+					$this -> db -> where('email',$email);
+					$this -> db -> set('device_list',$device_id_list);
+					$this -> db -> set('device_names',$device_name_list);
+					$this -> db -> update('user_devices');
 
 
 
-
-
-
-
-
+			}
 
 
 			/*
 			 *	Verifies the given email exists in the database of 'user_devices'
 			 */
 
-		    private function verify_user($email){
+		    public function verify_user($email){
 				
 
 				$q = $this -> db -> where('email',$email)-> limit(1) -> get('user_devices');
@@ -72,7 +84,7 @@
 			}
 
 
-			private function newSettings($data,$email){
+			public function newSettings($data,$email){
 						//updates settings with new ones
 						$this -> db -> where('email',$email);
 						$this -> db -> update('user_settings',$data);
@@ -80,9 +92,22 @@
 
 			}
 
+			public function getDevices($email){
+
+				$q = $this -> db -> where('email',$email) -> limit(1) -> get('user_devices');
+				
+				if($q -> num_rows() > 0){
+					
+					return $q -> row();
+				
+				}
+
+				return false;
+
+			}
 
 
-			private function getSettings($email){				
+			public function getSettings($email){				
 
 				$q = $this -> db -> where('email',$email) -> limit(1) -> get('user_settings');
 

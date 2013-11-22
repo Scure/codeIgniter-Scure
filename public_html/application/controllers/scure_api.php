@@ -20,8 +20,6 @@ require_once(APPPATH.'libraries/response_codes.php');
 			}
 
 
-
-
 			/** user is the resource and get is the action **/
 			function user_get(){
 
@@ -110,22 +108,24 @@ require_once(APPPATH.'libraries/response_codes.php');
 
 			function user_put(){
 				
-
+				$email = $this->put('email');
+				$pw = $this->put('pw');
+				$firstname = $this->put('firstname');
+				$lastname = $this->put('lastname');
 
 				$this->load->model('user_model');
+				if(!$email || !$pw || !$firstname || !$lastname){
 
-				if(!$this->get('id') || !$this->get('pw') || !$this->get('firstname') || !$this->get('lastname')){
-
-					$this -> response(array('status'=>'user exists',400));
+					$this -> response(array('status'=>'Invalid parameters'),400);
 
 				}
 
 				$user_data = array(
 
-								'email' => $this->get('id'),
-								'pw'    => $this->get('pw'),
-								'firstname' => $this->get('firstname'),
-								'lastname' => $this->get('lastname')
+								'email' => $email,
+								'pw'    => $pw,
+								'firstname' => $firstname,
+								'lastname' => $lastname
 								  
 								  );
 
@@ -207,13 +207,53 @@ require_once(APPPATH.'libraries/response_codes.php');
 
 
 
+			function device_put(){
+
+				//Requires: Device_ID & Device Name & Email 
+				//Returns: status 
+				$this -> load -> model('device_model');
+				$email = html_entity_decode($this->put('email'));
+				$new_device_id = $this->put('device_id');
+				$new_device_name = $this->put('device_name');
+				$error_param = json_encode(array('status'=>'Invalid Parameters'));
+				if(!$email || !$new_device_id || !$new_device_name){
+
+					$this->response($error_param,400);
+
+				}
+
+				//@TODO: Might need to add authentication for device IDs.  Check a database of existing IDs. And return if this device is valid.
+
+				$result = $this -> device_model -> getDevices($email);
+
+				if($result !== false){
+
+					$existing_device_ids = $result -> device_list; 
+
+				}
+
+				if(strlen($existing_device_ids) !== 0){								// There are existing and registered devices
 
 
+					$existing_device_names = $result -> device_names;
+
+					$existing_device_ids = $existing_device_ids.",".$new_device_id;
+					$existing_device_names = $existing_device_names.",".$new_device_name;
+					$this -> device_model -> put($email,$existing_device_ids,$existing_device_names);	
+					$this -> response(array('status'=>'new device added'),200);
 
 
+				}
+				else{
 
+																					// There are no pre-existing registered devices
+					$new_device_id_list = ",".$new_device_id;
+					$new_device_name_list = ",".$new_device_name;
+					$this -> device_model -> put($email,$new_device_id_list,$new_device_name_list);
+					$this -> response(array('status'=>'device list created'),200);
+				}
 
-
+			}
 
 
 	}
